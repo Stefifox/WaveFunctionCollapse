@@ -46,6 +46,9 @@ namespace WaveFunctionCollapse
             Extras.PrintGrid(Grid, GridRows, GridColumns);
         }
 
+        /// <summary>
+        /// Define the list of nodes to use.
+        /// </summary>
         private static void InitNodes()
         {
             MyNodes.AddRange([
@@ -56,6 +59,9 @@ namespace WaveFunctionCollapse
             ]);
         }
 
+        /// <summary>
+        /// Initializes the grid.
+        /// </summary>
         private static void InitGrid()
         {
             for (var row = 0; row < GridRows; row++)
@@ -71,6 +77,10 @@ namespace WaveFunctionCollapse
             }
         }
 
+        /// <summary>
+        /// Add a node to the list to process.
+        /// </summary>
+        /// <param name="node"></param>
         private static void AddToProcess(Node node)
         {
             if (NodesToProcess.Contains(node))
@@ -119,6 +129,12 @@ namespace WaveFunctionCollapse
             return neighbors;
         }
         
+        /// <summary>
+        /// Get neighbors of the current node in the door direction 
+        /// </summary>
+        /// <param name="col"></param>
+        /// <param name="row"></param>
+        /// <returns></returns>
         private static Dictionary<string, Node> GetNeighborsDoors(int col, int row)
         {
             var neighbors = new Dictionary<string, Node>();
@@ -143,6 +159,12 @@ namespace WaveFunctionCollapse
             return neighbors;
         }
         
+        /// <summary>
+        ///  Checks if a given node is compatible with the neighbors.
+        /// </summary>
+        /// <param name="node"></param>
+        /// <param name="neighbors"></param>
+        /// <returns></returns>
         private static bool IsCompatible(Node node, Dictionary<string, Node> neighbors)
         {
             var isCompatible = true;
@@ -189,7 +211,10 @@ namespace WaveFunctionCollapse
             return isCompatible;
         }
 
-       
+        /// <summary>
+        /// Collapse the current node.
+        /// </summary>
+        /// <param name="current"></param>
         private static void Collapse(Node current)
         {
             var compatibleNodes = new List<Node>();
