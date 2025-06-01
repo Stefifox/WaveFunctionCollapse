@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Progetti\\WaveFunctioColapse\\WaveFunctionColapse\\WaveFunctionCollapse.csproj": {}
+    "C:\\Users\\stefi\\Desktop\\Sviluppo\\WaveFunctionColapse\\WaveFunctionColapse\\WaveFunctionCollapse.csproj": {}
   },
   "projects": {
-    "F:\\Progetti\\WaveFunctioColapse\\WaveFunctionColapse\\WaveFunctionCollapse.csproj": {
+    "C:\\Users\\stefi\\Desktop\\Sviluppo\\WaveFunctionColapse\\WaveFunctionColapse\\WaveFunctionCollapse.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Progetti\\WaveFunctioColapse\\WaveFunctionColapse\\WaveFunctionCollapse.csproj",
+        "projectUniqueName": "C:\\Users\\stefi\\Desktop\\Sviluppo\\WaveFunctionColapse\\WaveFunctionColapse\\WaveFunctionCollapse.csproj",
         "projectName": "WaveFunctionCollapse",
-        "projectPath": "F:\\Progetti\\WaveFunctioColapse\\WaveFunctionColapse\\WaveFunctionCollapse.csproj",
+        "projectPath": "C:\\Users\\stefi\\Desktop\\Sviluppo\\WaveFunctionColapse\\WaveFunctionColapse\\WaveFunctionCollapse.csproj",
         "packagesPath": "C:\\Users\\stefi\\.nuget\\packages\\",
-        "outputPath": "F:\\Progetti\\WaveFunctioColapse\\WaveFunctionColapse\\obj\\",
+        "outputPath": "C:\\Users\\stefi\\Desktop\\Sviluppo\\WaveFunctionColapse\\WaveFunctionColapse\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

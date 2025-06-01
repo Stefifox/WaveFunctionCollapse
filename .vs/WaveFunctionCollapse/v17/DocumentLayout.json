@@ -1,22 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "F:\\Progetti\\WaveFunctioColapse\\",
+  "WorkspaceRootPath": "C:\\Users\\stefi\\Desktop\\Sviluppo\\WaveFunctionColapse\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\Progetti\\WaveFunctioColapse\\WaveFunctioColapse\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WaveFunctioColapse\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\Progetti\\WaveFunctioColapse\\WaveFunctioColapse\\Node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WaveFunctioColapse\\Node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\Progetti\\WaveFunctioColapse\\WaveFunctioColapse\\Extras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WaveFunctioColapse\\Extras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\Progetti\\WaveFunctioColapse\\WaveFunctioColapse\\WaveFunctionCollapse.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WaveFunctioColapse\\WaveFunctionCollapse.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{1AF187E6-ADE9-4BE2-B84E-F3F38BEF87C7}|WaveFunctionColapse\\WaveFunctionCollapse.csproj|c:\\users\\stefi\\desktop\\sviluppo\\wavefunctioncolapse\\wavefunctioncolapse\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AF187E6-ADE9-4BE2-B84E-F3F38BEF87C7}|WaveFunctionColapse\\WaveFunctionCollapse.csproj|solutionrelative:wavefunctioncolapse\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,53 +14,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Node.cs",
-              "DocumentMoniker": "F:\\Progetti\\WaveFunctioColapse\\WaveFunctioColapse\\Node.cs",
-              "RelativeDocumentMoniker": "WaveFunctioColapse\\Node.cs",
-              "ToolTip": "F:\\Progetti\\WaveFunctioColapse\\WaveFunctioColapse\\Node.cs",
-              "RelativeToolTip": "WaveFunctioColapse\\Node.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-31T11:44:55.8Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Extras.cs",
-              "DocumentMoniker": "F:\\Progetti\\WaveFunctioColapse\\WaveFunctioColapse\\Extras.cs",
-              "RelativeDocumentMoniker": "WaveFunctioColapse\\Extras.cs",
-              "ToolTip": "F:\\Progetti\\WaveFunctioColapse\\WaveFunctioColapse\\Extras.cs",
-              "RelativeToolTip": "WaveFunctioColapse\\Extras.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-31T10:36:13.263Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "F:\\Progetti\\WaveFunctioColapse\\WaveFunctioColapse\\Program.cs",
-              "RelativeDocumentMoniker": "WaveFunctioColapse\\Program.cs",
-              "ToolTip": "F:\\Progetti\\WaveFunctioColapse\\WaveFunctioColapse\\Program.cs",
-              "RelativeToolTip": "WaveFunctioColapse\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\stefi\\Desktop\\Sviluppo\\WaveFunctionColapse\\WaveFunctionColapse\\Program.cs",
+              "RelativeDocumentMoniker": "WaveFunctionColapse\\Program.cs",
+              "ToolTip": "C:\\Users\\stefi\\Desktop\\Sviluppo\\WaveFunctionColapse\\WaveFunctionColapse\\Program.cs",
+              "RelativeToolTip": "WaveFunctionColapse\\Program.cs",
+              "ViewState": "AgIAAMEAAAAAAAAAAAAawBIBAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-31T11:11:20.322Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "WaveFunctionCollapse.csproj",
-              "DocumentMoniker": "F:\\Progetti\\WaveFunctioColapse\\WaveFunctioColapse\\WaveFunctionCollapse.csproj",
-              "RelativeDocumentMoniker": "WaveFunctioColapse\\WaveFunctionCollapse.csproj",
-              "ToolTip": "F:\\Progetti\\WaveFunctioColapse\\WaveFunctioColapse\\WaveFunctionCollapse.csproj",
-              "RelativeToolTip": "WaveFunctioColapse\\WaveFunctionCollapse.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-05-31T10:35:37.929Z"
+              "WhenOpened": "2025-06-01T16:08:14.078Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -7,20 +7,20 @@ namespace WaveFunctionCollapse
 {
     class Program
     {
-        private const int GridHeight = 5;
-        private const int GridWidth = 5;
+        private const int GridRows = 5;
+        private const int GridColumns = 5;
 
         /// <summary>
         /// List of possible nodes.
         /// </summary>
-        private static readonly List<Node> Nodes = new List<Node>();
+        private static readonly List<Node> MyNodes = new List<Node>();
 
         /// <summary>
         /// List of nodes to process.
         /// </summary>
         private static readonly List<Node> NodesToProcess = new List<Node>();
 
-        private static readonly Node[,] Grid = new Node[GridHeight, GridWidth];
+        private static readonly Node[,] Grid = new Node[GridRows, GridColumns];
 
         private static Random random = new Random();
 
@@ -29,150 +29,41 @@ namespace WaveFunctionCollapse
             InitNodes();
             InitGrid();
 
-            int randomStartX = random.Next(0, GridHeight);
-            int randomStartY = random.Next(0, GridWidth);
-            int randomNode = random.Next(0, Nodes.Count);
-            Console.WriteLine($"Random Node at [{randomStartX}, {randomStartY}]: {Nodes[randomNode].Name}");
+            var startNode = Nodes.All.Clone();
+            startNode.row = 1;
+            startNode.col = 2;
+            startNode.IsCollapsed = true;
+            Grid[1, 2] = startNode;
 
-            var randomNodeClone = Nodes[randomNode].Clone();
-            randomNodeClone.IsCollapsed = true;
-            randomNodeClone.x = randomStartX;
-            randomNodeClone.y = randomStartY;
-            Grid[randomStartX, randomStartY] = randomNodeClone;
-            CheckNeighbors(randomStartX, randomStartY);
+            CheckNeighbors(startNode.col, startNode.row);
 
             while (NodesToProcess.Count > 0)
             {
-                var currentNode = NodesToProcess.First();
-                Collapse(currentNode);
-                NodesToProcess.Remove(currentNode);
+                var node = NodesToProcess.First();
+                Collapse(node);
+                NodesToProcess.Remove(node);
             }
 
-            Extras.PrintGrid(Grid, GridHeight, GridWidth);
+            Extras.PrintGrid(Grid, GridRows, GridColumns);
         }
 
         private static void InitNodes()
         {
-            var room0 = new Node()
-            {
-                Name = "Tutti",
-                Texture = "room0000.png",
-                Corners = new Corners()
-                {
-                    Top = 1,
-                    Bottom = 1,
-                    Left = 1,
-                    Right = 1
-                }
-            };
-
-            var room1 = new Node()
-            {
-                Name = "Destra",
-                Texture = "room0001.png",
-                Corners = new Corners()
-                {
-                    Top = 0,
-                    Bottom = 0,
-                    Left = 0,
-                    Right = 1
-                }
-            };
-
-            var room2 = new Node()
-            {
-                Name = "Sinistra",
-                Texture = "room0002.png",
-                Corners = new Corners()
-                {
-                    Top = 0,
-                    Bottom = 0,
-                    Left = 1,
-                    Right = 0
-                }
-            };
-
-            var room3 = new Node()
-            {
-                Name = "Alto",
-                Texture = "room0003.png",
-                Corners = new Corners()
-                {
-                    Top = 1,
-                    Bottom = 0,
-                    Left = 0,
-                    Right = 0
-                }
-            };
-
-            var room4 = new Node()
-            {
-                Name = "Basso",
-                Texture = "room0004.png",
-                Corners = new Corners()
-                {
-                    Top = 0,
-                    Bottom = 1,
-                    Left = 0,
-                    Right = 0
-                }
-            };
-
-            var room5 = new Node()
-            {
-                Name = "Left Right",
-                Texture = "room0005.png",
-                Corners = new Corners()
-                {
-                    Top = 0,
-                    Bottom = 0,
-                    Left = 1,
-                    Right = 1
-                }
-            };
-
-
-            var room6 = new Node()
-            {
-                Name = "Top Bottom",
-                Texture = "room0006.png",
-                Corners = new Corners()
-                {
-                    Top = 1,
-                    Bottom = 1,
-                    Left = 0,
-                    Right = 0
-                }
-            };
-
-            Nodes.Add(room0);
-            Nodes.Add(room1);
-            Nodes.Add(room2);
-            Nodes.Add(room3);
-            Nodes.Add(room4);
-            Nodes.Add(room5);
-            Nodes.Add(room6);
+            MyNodes.AddRange([
+                Nodes.Right, Nodes.Left, Nodes.Top, Nodes.Bottom, Nodes.LeftRight, Nodes.TopBottom
+            ]);
         }
 
         private static void InitGrid()
         {
-            var baseNode = new Node()
+            for (var row = 0; row < GridRows; row++)
             {
-                Name = "void",
-                IsCollapsed = false
-            };
-
-            for (var x = 0; x < GridWidth; x++)
-            {
-                for (var y = 0; y < GridHeight; y++)
+                for (var col = 0; col < GridColumns; col++)
                 {
-                    var clone = baseNode.Clone();
-                    clone.x = x;
-                    clone.y = y;
-                    clone.Texture = "room0014.png";
-                    Grid[x, y] = clone;
-                    
-                    Console.WriteLine($"Generated at [{x}, {y}]");
+                    var baseNode = Nodes.Void.Clone();
+                    baseNode.row = row;
+                    baseNode.col = col;
+                    Grid[row, col] = baseNode;
                 }
             }
         }
@@ -184,97 +75,126 @@ namespace WaveFunctionCollapse
             NodesToProcess.Add(node);
         }
 
-        private static void CheckNeighbors(int x, int y)
+        /// <summary>
+        /// Checks if a neighbor node needs to be collapsed
+        /// </summary>
+        /// <param name="col"></param>
+        /// <param name="row"></param>
+        private static void CheckNeighbors(int col, int row)
         {
-            if (x > 0)
-                if (!Grid[x - 1, y].IsCollapsed)
-                    AddToProcess(Grid[x - 1, y]);
-            if (x < GridHeight - 1)
-                if (!Grid[x + 1, y].IsCollapsed)
-                    AddToProcess(Grid[x + 1, y]);
-            if (y > 0)
-                if (!Grid[x, y - 1].IsCollapsed)
-                    AddToProcess(Grid[x, y - 1]);
-            if (y < GridWidth - 1)
-                if (!Grid[x, y + 1].IsCollapsed)
-                    AddToProcess(Grid[x, y + 1]);
-        }
+            var neighbors = GetNeighbors(col, row);
 
-        private static Dictionary<string, Node> GetNeighbors(int x, int y)
-        {
-            var result = new Dictionary<string, Node>();
-            if (x > 0)
-                if(Grid[x - 1, y].IsCollapsed) result.Add("Top", Grid[x - 1, y]);
-            if (x < GridHeight - 1)
-                if( Grid[x + 1, y].IsCollapsed) result.Add("Bottom", Grid[x + 1, y]);
-            if (y > 0)
-                if(Grid[x, y - 1].IsCollapsed) result.Add("Left", Grid[x, y - 1]);
-            if (y < GridWidth - 1)
-                if(Grid[x, y + 1].IsCollapsed) result.Add("Right", Grid[x, y + 1]);
-            return result;
-        }
-
-        private static bool IsCompatible(Node node, Dictionary<string, Node> nodes)
-        {
-            var result = true;
-            
-            foreach (var neighbor in nodes)
+            foreach (var neighbor in neighbors.Values.Where(neighbor => !neighbor.IsCollapsed))
             {
-                switch (neighbor.Key)
+                AddToProcess(neighbor);
+            }
+        }
+
+        /// <summary>
+        /// Returns a dictionary containing the neighbors of a given node.
+        /// </summary>
+        /// <param name="col"></param>
+        /// <param name="row"></param>
+        /// <returns></returns>
+        private static Dictionary<string, Node> GetNeighbors(int col, int row)
+        {
+            var neighbors = new Dictionary<string, Node>();
+
+            // Left Node
+            if (col > 0)
+                neighbors.Add("Left", Grid[row, col - 1]);
+            // Right Node
+            if (col < GridColumns - 1)
+                neighbors.Add("Right", Grid[row, col + 1]);
+            // Top Node
+            if (row > 0)
+                neighbors.Add("Top", Grid[row - 1, col]);
+            // Bottom Node
+            if (row < GridRows - 1)
+                neighbors.Add("Bottom", Grid[row + 1, col]);
+
+            return neighbors;
+        }
+
+        private static bool IsCompatible(Node node, Dictionary<string, Node> neighbors)
+        {
+            var isCompatible = true;
+
+            foreach (var neighbor in neighbors)
+            {
+                var neighborNode = neighbor.Value;
+                // isCompatible = CornerCompatible(neighbor.Key, node, neighborNode);
+                if (neighborNode.IsCollapsed)
                 {
-                    case "Top":
-                        if(node.Corners.Top != 1)
+                    switch (neighbor.Key)
+                    {
+                        case "Top":
+                            if(neighborNode.row - 1 < 0 && node.Corners.Top == 1 )
+                                isCompatible = false;
+                            if (node.Corners.Top != 1 && neighborNode.Corners.Bottom == 2 ||
+                                node.Corners.Top == 1 && neighborNode.Corners.Bottom != 2)
+                                isCompatible = false;
+                            break;
+                        case "Bottom":
+                            if (neighborNode.row + 1 > GridRows - 1 && node.Corners.Bottom == 2)
+                                isCompatible = false;
+                            if (node.Corners.Bottom != 2 && neighborNode.Corners.Top == 1 ||
+                                node.Corners.Bottom == 2 && neighborNode.Corners.Top != 1)
+                                isCompatible = false;
+                            break;
+                        case "Left":
+                            if (neighborNode.col - 1 < 0 && node.Corners.Left == 3)
+                                isCompatible = false;
+                            if (node.Corners.Left != 3 && neighborNode.Corners.Right == 4 ||
+                                node.Corners.Left == 3 && neighborNode.Corners.Right != 4)
+                                isCompatible = false;
+                            break;
+                        case "Right":
+                            if (neighborNode.col + 1 > GridColumns - 1 && node.Corners.Right == 4)
+                                isCompatible = false;
+                            if (node.Corners.Right != 4 && neighborNode.Corners.Left == 3 ||
+                                node.Corners.Right == 4 && neighborNode.Corners.Left != 3)
+                                isCompatible = false;
+                            break;
+                    }
                 }
             }
-    
-            return result;
 
+            return isCompatible;
         }
 
+       
         private static void Collapse(Node current)
         {
-            var avaiableNodes = Nodes.ToList();
             var compatibleNodes = new List<Node>();
-            var x = current.x;
-            var y = current.y;
-            
-            var neighbors = GetNeighbors(x, y);
 
-            foreach (var node in avaiableNodes)
+            var neighbors = GetNeighbors(current.col, current.row);
+
+            foreach (var node in MyNodes)
             {
-                if(IsCompatible(node, neighbors))
+                if (IsCompatible(node, neighbors))
                     compatibleNodes.Add(node);
             }
 
             if (compatibleNodes.Count > 0)
             {
-                var randomNode = random.Next(0, compatibleNodes.Count);
-                var node = compatibleNodes[randomNode].Clone();
-                node.x = x;
-                node.y = y;
-                node.IsCollapsed = true;
-                Grid[x, y] = node;
-                Console.WriteLine($"Collapsed at [{x}, {y}]: {node.Name}");
+                var radomValue = random.Next(0, compatibleNodes.Count);
+                var randomNode = compatibleNodes[radomValue].Clone();
+                randomNode.row = current.row;
+                randomNode.col = current.col;
+                randomNode.IsCollapsed = true;
+                Grid[current.row, current.col] = randomNode;
             }
             else
             {
-                var node = Grid[x, y].Clone();
-                node.x = x;
-                node.y = y;
-                node.IsCollapsed = true;
-                node.Corners = new Corners()
-                {
-                    Top = 0,
-                    Bottom = 0,
-                    Left = 0,
-                    Right = 0
-                };
-                node.Texture = "room0014.png";
-                Grid[x, y] = node;
-                Console.WriteLine($"Collapsed at [{x}, {y}]: {node.Name}");
+                var voidNode = Nodes.Void.Clone();
+                voidNode.row = current.row;
+                voidNode.col = current.col;
+                voidNode.IsCollapsed = true;
+                Grid[current.row, current.col] = voidNode;
             }
-           
-            CheckNeighbors(x, y);
+
+            CheckNeighbors(current.col, current.row);
         }
     }
 }

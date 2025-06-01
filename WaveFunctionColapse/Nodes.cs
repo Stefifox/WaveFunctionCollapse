@@ -1,0 +1,109 @@
+﻿namespace WaveFunctionCollapse;
+
+public class Nodes
+{
+    public static Node Void = new Node()
+    {
+        Name = "Void",
+        Texture = "void.png",
+        Corners = new Corners()
+        {
+            Top = 0,
+            Bottom = 0,
+            Left = 0,
+            Right = 0
+        }
+    };
+
+    public static Node All = new Node()
+    {
+        Name = "All",
+        Texture = "room0000.png",
+        Corners = new Corners()
+        {
+            Top = 1,
+            Bottom = 2,
+            Left = 3,
+            Right = 4
+        }
+    };
+
+    public static Node Right = new Node()
+    {
+        Name = "Right",
+        Texture = "room0001.png",
+        Corners = new Corners()
+        {
+            Top = 0,
+            Bottom = 0,
+            Left = 0,
+            Right = 4
+        }
+    };
+
+    public static Node Left = new Node()
+    {
+        Name = "Left",
+        Texture = "room0002.png",
+        Corners = new Corners()
+        {
+            Top = 0,
+            Bottom = 0,
+            Left = 3,
+            Right = 0
+        }
+    };
+
+    public static Node Top = new Node()
+    {
+        Name = "Top",
+        Texture = "room0003.png",
+        Corners = new Corners()
+        {
+            Top = 1,
+            Bottom = 0,
+            Left = 0,
+            Right = 0
+        }
+    };
+
+    public static Node Bottom = new Node()
+    {
+        Name = "Bottom",
+        Texture = "room0004.png",
+        Corners = new Corners()
+        {
+            Top = 0,
+            Bottom = 2,
+            Left = 0,
+            Right = 0
+        }
+    };
+
+    public static Node LeftRight = new Node()
+    {
+        Name = "Left Right",
+        Texture = "room0005.png",
+        Corners = new Corners()
+        {
+            Top = 0,
+            Bottom = 0,
+            Left = 3,
+            Right = 4
+        }
+    };
+
+
+    public static Node TopBottom = new Node()
+    {
+        Name = "Top Bottom",
+        Texture = "room0006.png",
+        Corners = new Corners()
+        {
+            Top = 1,
+            Bottom = 2,
+            Left = 0,
+            Right = 0
+        }
+    };
+}
