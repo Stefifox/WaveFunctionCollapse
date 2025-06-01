@@ -29,12 +29,12 @@ namespace WaveFunctionCollapse
             InitGrid();
 
             var startNode = MyNodes[random.Next(0, MyNodes.Count)].Clone();
-            startNode.row = GridRows / 2;
-            startNode.col = GridColumns / 2;
+            startNode.Row = GridRows / 2;
+            startNode.Col = GridColumns / 2;
             startNode.IsCollapsed = true;
-            Grid[startNode.row, startNode.col] = startNode;
+            Grid[startNode.Row, startNode.Col] = startNode;
 
-            CheckNeighbors(startNode.col, startNode.row);
+            CheckNeighbors(startNode.Col, startNode.Row);
 
             while (NodesToProcess.Count > 0)
             {
@@ -69,8 +69,8 @@ namespace WaveFunctionCollapse
                 for (var col = 0; col < GridColumns; col++)
                 {
                     var baseNode = Nodes.Void.Clone();
-                    baseNode.row = row;
-                    baseNode.col = col;
+                    baseNode.Row = row;
+                    baseNode.Col = col;
                     baseNode.IsCollapsed = (row > 0 && col == 0) || (row == 0 && col > 0) || (row == GridRows -1  && col > 0) || (row > 0 && col == GridColumns - 1);
                     Grid[row, col] = baseNode;
                 }
@@ -177,28 +177,28 @@ namespace WaveFunctionCollapse
                     switch (neighbor.Key)
                     {
                         case "Top":
-                            if(neighborNode.row - 1 < 0 && node.Corners.Top == 1 )
+                            if(neighborNode.Row - 1 < 0 && node.Corners.Top == 1 )
                                 isCompatible = false;
                             if (node.Corners.Top != 1 && neighborNode.Corners.Bottom == 2 ||
                                 node.Corners.Top == 1 && neighborNode.Corners.Bottom != 2)
                                 isCompatible = false;
                             break;
                         case "Bottom":
-                            if (neighborNode.row + 1 > GridRows - 1 && node.Corners.Bottom == 2)
+                            if (neighborNode.Row + 1 > GridRows - 1 && node.Corners.Bottom == 2)
                                 isCompatible = false;
                             if (node.Corners.Bottom != 2 && neighborNode.Corners.Top == 1 ||
                                 node.Corners.Bottom == 2 && neighborNode.Corners.Top != 1)
                                 isCompatible = false;
                             break;
                         case "Left":
-                            if (neighborNode.col - 1 < 0 && node.Corners.Left == 3)
+                            if (neighborNode.Col - 1 < 0 && node.Corners.Left == 3)
                                 isCompatible = false;
                             if (node.Corners.Left != 3 && neighborNode.Corners.Right == 4 ||
                                 node.Corners.Left == 3 && neighborNode.Corners.Right != 4)
                                 isCompatible = false;
                             break;
                         case "Right":
-                            if (neighborNode.col + 1 > GridColumns - 1 && node.Corners.Right == 4)
+                            if (neighborNode.Col + 1 > GridColumns - 1 && node.Corners.Right == 4)
                                 isCompatible = false;
                             if (node.Corners.Right != 4 && neighborNode.Corners.Left == 3 ||
                                 node.Corners.Right == 4 && neighborNode.Corners.Left != 3)
@@ -219,7 +219,7 @@ namespace WaveFunctionCollapse
         {
             var compatibleNodes = new List<Node>();
 
-            var neighbors = GetNeighbors(current.col, current.row);
+            var neighbors = GetNeighbors(current.Col, current.Row);
 
             foreach (var node in MyNodes)
             {
@@ -231,21 +231,21 @@ namespace WaveFunctionCollapse
             {
                 var radomValue = random.Next(0, compatibleNodes.Count);
                 var randomNode = compatibleNodes[radomValue].Clone();
-                randomNode.row = current.row;
-                randomNode.col = current.col;
+                randomNode.Row = current.Row;
+                randomNode.Col = current.Col;
                 randomNode.IsCollapsed = true;
-                Grid[current.row, current.col] = randomNode;
+                Grid[current.Row, current.Col] = randomNode;
             }
             else
             {
                 var voidNode = Nodes.Void.Clone();
-                voidNode.row = current.row;
-                voidNode.col = current.col;
+                voidNode.Row = current.Row;
+                voidNode.Col = current.Col;
                 voidNode.IsCollapsed = true;
-                Grid[current.row, current.col] = voidNode;
+                Grid[current.Row, current.Col] = voidNode;
             }
 
-            CheckNeighbors(current.col, current.row);
+            CheckNeighbors(current.Col, current.Row);
         }
     }
 }

@@ -20,14 +20,14 @@ namespace WaveFunctionCollapse
                     var current = grid[row, col];
                     var image = Image.FromFile($"./Assets/{current.Texture}");
 
-                    graphics.DrawImage(image,current.col * _pixelSizeX, current.row * _pixelSizey);
+                    graphics.DrawImage(image,current.Col * _pixelSizeX, current.Row * _pixelSizey);
                 }
             }
 
             if(!Directory.Exists("./out"))
                 Directory.CreateDirectory("./out");
             
-            bitmap.Save($"./out/output{DateTime.Now.ToString("hhmmss")}.png");
+            bitmap.Save($"./out/output{DateTime.Now.ToString("hhmmss")}.jpeg");
         }
     }
 }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WaveFunctionCollapse")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+787599db16e140fe7905153a2e55f976d288bba1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+04a2368a9e6996f30d132f049f066347610f060b")]
 [assembly: System.Reflection.AssemblyProductAttribute("WaveFunctionCollapse")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WaveFunctionCollapse")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

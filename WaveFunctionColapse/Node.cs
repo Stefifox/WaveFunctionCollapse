@@ -20,8 +20,10 @@ namespace WaveFunctionCollapse
         public string Name { get; set; }
         public string Texture { get; set; }
         public bool IsCollapsed { get; set; }
-        public int row { get; set; }
-        public int col { get; set; }
+        public int Row { get; set; }
+        public int Col { get; set; }
+        
+        public float Probability { get; set; } 
         
         public Corners Corners { get; set; }
 
