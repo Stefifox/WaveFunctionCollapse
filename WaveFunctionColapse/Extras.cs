@@ -1,5 +1,6 @@
 using System;
 using System.Drawing;
+using System.IO;
 
 namespace WaveFunctionCollapse
 {
@@ -23,6 +24,9 @@ namespace WaveFunctionCollapse
                 }
             }
 
+            if(!Directory.Exists("./out"))
+                Directory.CreateDirectory("./out");
+            
             bitmap.Save($"./out/output{DateTime.Now.ToString("hhmmss")}.png");
         }
     }
