@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Windows.Data.Xml.Dom;
 
 namespace WaveFunctionCollapse
 {
     class Program
     {
-        private const int GridRows = 5;
-        private const int GridColumns = 5;
+        private const int GridRows = 20;
+        private const int GridColumns = 20;
 
         /// <summary>
         /// List of possible nodes.
@@ -29,11 +28,11 @@ namespace WaveFunctionCollapse
             InitNodes();
             InitGrid();
 
-            var startNode = Nodes.All.Clone();
-            startNode.row = 1;
-            startNode.col = 2;
+            var startNode = MyNodes[random.Next(0, MyNodes.Count)].Clone();
+            startNode.row = GridRows / 2;
+            startNode.col = GridColumns / 2;
             startNode.IsCollapsed = true;
-            Grid[1, 2] = startNode;
+            Grid[startNode.row, startNode.col] = startNode;
 
             CheckNeighbors(startNode.col, startNode.row);
 
@@ -50,7 +49,10 @@ namespace WaveFunctionCollapse
         private static void InitNodes()
         {
             MyNodes.AddRange([
-                Nodes.Right, Nodes.Left, Nodes.Top, Nodes.Bottom, Nodes.LeftRight, Nodes.TopBottom
+                //Nodes.All,
+                Nodes.Right, Nodes.Left, Nodes.Top, Nodes.Bottom, Nodes.LeftRight, Nodes.TopBottom,
+                Nodes.LeftRightTop, Nodes.LeftTopBottom, Nodes.RightTopBottom, Nodes.LeftBottom,
+                Nodes.TopRight, Nodes.RightBottom, Nodes.TopLeft, Nodes.BottomLeftRight
             ]);
         }
 
@@ -63,6 +65,7 @@ namespace WaveFunctionCollapse
                     var baseNode = Nodes.Void.Clone();
                     baseNode.row = row;
                     baseNode.col = col;
+                    baseNode.IsCollapsed = (row > 0 && col == 0) || (row == 0 && col > 0) || (row == GridRows -1  && col > 0) || (row > 0 && col == GridColumns - 1);
                     Grid[row, col] = baseNode;
                 }
             }
@@ -82,7 +85,7 @@ namespace WaveFunctionCollapse
         /// <param name="row"></param>
         private static void CheckNeighbors(int col, int row)
         {
-            var neighbors = GetNeighbors(col, row);
+            var neighbors = GetNeighborsDoors(col, row);
 
             foreach (var neighbor in neighbors.Values.Where(neighbor => !neighbor.IsCollapsed))
             {
@@ -115,7 +118,31 @@ namespace WaveFunctionCollapse
 
             return neighbors;
         }
+        
+        private static Dictionary<string, Node> GetNeighborsDoors(int col, int row)
+        {
+            var neighbors = new Dictionary<string, Node>();
 
+            // Left Node
+            if (col > 0)
+                if(Grid[row, col].Corners.Left == 3)
+                    neighbors.Add("Left", Grid[row, col - 1]);
+            // Right Node
+            if (col < GridColumns - 1)
+                if(Grid[row, col].Corners.Right == 4)
+                    neighbors.Add("Right", Grid[row, col + 1]);
+            // Top Node
+            if (row > 0)
+                if(Grid[row, col].Corners.Top == 1)
+                    neighbors.Add("Top", Grid[row - 1, col]);
+            // Bottom Node
+            if (row < GridRows - 1)
+                if(Grid[row, col].Corners.Bottom == 2)
+                    neighbors.Add("Bottom", Grid[row + 1, col]);
+
+            return neighbors;
+        }
+        
         private static bool IsCompatible(Node node, Dictionary<string, Node> neighbors)
         {
             var isCompatible = true;
@@ -123,7 +150,6 @@ namespace WaveFunctionCollapse
             foreach (var neighbor in neighbors)
             {
                 var neighborNode = neighbor.Value;
-                // isCompatible = CornerCompatible(neighbor.Key, node, neighborNode);
                 if (neighborNode.IsCollapsed)
                 {
                     switch (neighbor.Key)

@@ -106,4 +106,109 @@ public class Nodes
             Right = 0
         }
     };
+    
+    public static Node LeftRightTop = new Node()
+    {
+        Name = "Left Right Top",
+        Texture = "room0007.png",
+        Corners = new Corners()
+        {
+            Top = 1,
+            Bottom = 0,
+            Left = 3,
+            Right = 4
+        }
+    };
+    
+    public static Node LeftTopBottom = new Node()
+    {
+        Name = "Left Top Bottom",
+        Texture = "room0008.png",
+        Corners = new Corners()
+        {
+            Top = 1,
+            Bottom = 2,
+            Left = 3,
+            Right = 0
+        }
+    };
+    
+    public static Node RightTopBottom = new Node()
+    {
+        Name = "Right Top Bottom",
+        Texture = "room0009.png",
+        Corners = new Corners()
+        {
+            Top = 1,
+            Bottom = 2,
+            Left = 0,
+            Right = 4
+        }
+    };
+    
+   public static Node LeftBottom = new Node()
+    {
+        Name = "LeftBottom",
+        Texture = "room0010.png",
+        Corners = new Corners()
+        {
+            Top = 0,
+            Bottom = 2,
+            Left = 3,
+            Right = 4
+        }
+    };
+   
+    public static Node TopRight = new Node()
+    {
+        Name = "TopRight",
+        Texture = "room0011.png",
+        Corners = new Corners()
+        {
+            Top = 1,
+            Bottom = 0,
+            Left = 0,
+            Right = 4
+        }
+    };
+    
+    public static Node RightBottom = new Node()
+    {
+        Name = "RightBottom",
+        Texture = "room0012.png",
+        Corners = new Corners()
+        {
+            Top = 0,
+            Bottom = 2,
+            Left = 0,
+            Right = 4
+        }
+    };
+    
+    public static Node TopLeft = new Node()
+    {
+        Name = "TopLeft",
+        Texture = "room0013.png",
+        Corners = new Corners()
+        {
+            Top = 1,
+            Bottom = 0,
+            Left = 3,
+            Right = 0
+        }
+    };
+    
+    public static Node BottomLeftRight = new Node()
+    {
+        Name = "BottomLeftRight",
+        Texture = "room0015.png",
+        Corners = new Corners()
+        {
+            Top = 0,
+            Bottom = 2,
+            Left = 3,
+            Right = 4
+        }
+    };
+    
 }
