@@ -1,0 +1,39 @@
+  //Node grass = new Node();
+            //grass.Name = "Erba";
+            //grass.Type = NodeType.Grass;
+            //grass.Texture = "Grass.png";
+            //grass.CompatibleWith = new List<NodeType>() { NodeType.Grass, NodeType.Water, NodeType.Stone };
+
+            //Nodes.Add(grass);
+
+            //Node grassTall = new Node();
+            //grassTall.Name = "Erba Alta";
+            //grassTall.Type = NodeType.Grass;
+            //grassTall.Texture = "TallGrass.png";
+            //grassTall.CompatibleWith = new List<NodeType>() { NodeType.Grass, NodeType.Stone, NodeType.Water };
+
+            //Nodes.Add(grassTall);
+
+            //Node rock = new Node();
+            //rock.Name = "Roccia";
+            //rock.Type = NodeType.Stone;
+            //rock.Texture = "Rock.png";
+            //rock.CompatibleWith = new List<NodeType>() { NodeType.Grass, NodeType.Stone };
+
+            //Nodes.Add(rock);
+
+            //Node water = new Node();
+            //water.Name = "Acqua";
+            //water.Type = NodeType.Water;
+            //water.Texture = "Water.png";
+            //water.CompatibleWith = new List<NodeType>() { NodeType.Grass, NodeType.Water, NodeType.DeepWater };
+
+            //Nodes.Add(water);
+
+            //Node deep = new Node();
+            //deep.Name = "Acqua Profonda";
+            //deep.Type = NodeType.DeepWater;
+            //deep.Texture = "DeepWater.png";
+            //deep.CompatibleWith = new List<NodeType>() { NodeType.Water };
+
+            //Nodes.Add(deep);

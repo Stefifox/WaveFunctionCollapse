@@ -1,0 +1,5 @@
+F:\Progetti\WaveFunctioColapse\WaveFunctioColapse\obj\Debug\net5.0-windows7.0\WaveFunctionCollapse.csproj.AssemblyReference.cache
+F:\Progetti\WaveFunctioColapse\WaveFunctioColapse\obj\Debug\net5.0-windows7.0\WaveFunctionCollapse.GeneratedMSBuildEditorConfig.editorconfig
+F:\Progetti\WaveFunctioColapse\WaveFunctioColapse\obj\Debug\net5.0-windows7.0\WaveFunctionCollapse.AssemblyInfoInputs.cache
+F:\Progetti\WaveFunctioColapse\WaveFunctioColapse\obj\Debug\net5.0-windows7.0\WaveFunctionCollapse.AssemblyInfo.cs
+F:\Progetti\WaveFunctioColapse\WaveFunctioColapse\obj\Debug\net5.0-windows7.0\WaveFunctionCollapse.csproj.CoreCompileInputs.cache

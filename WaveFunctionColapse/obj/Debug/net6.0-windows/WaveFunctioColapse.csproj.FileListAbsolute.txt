@@ -1,0 +1,17 @@
+F:\Progetti\WaveFunctioColapse\WaveFunctioColapse\bin\Debug\net6.0-windows\WaveFunctioColapse.exe
+F:\Progetti\WaveFunctioColapse\WaveFunctioColapse\bin\Debug\net6.0-windows\WaveFunctioColapse.deps.json
+F:\Progetti\WaveFunctioColapse\WaveFunctioColapse\bin\Debug\net6.0-windows\WaveFunctioColapse.runtimeconfig.json
+F:\Progetti\WaveFunctioColapse\WaveFunctioColapse\bin\Debug\net6.0-windows\WaveFunctioColapse.dll
+F:\Progetti\WaveFunctioColapse\WaveFunctioColapse\bin\Debug\net6.0-windows\WaveFunctioColapse.pdb
+F:\Progetti\WaveFunctioColapse\WaveFunctioColapse\bin\Debug\net6.0-windows\System.Drawing.Common.dll
+F:\Progetti\WaveFunctioColapse\WaveFunctioColapse\obj\Debug\net6.0-windows\WaveFunctioColapse.csproj.AssemblyReference.cache
+F:\Progetti\WaveFunctioColapse\WaveFunctioColapse\obj\Debug\net6.0-windows\WaveFunctioColapse.GeneratedMSBuildEditorConfig.editorconfig
+F:\Progetti\WaveFunctioColapse\WaveFunctioColapse\obj\Debug\net6.0-windows\WaveFunctioColapse.AssemblyInfoInputs.cache
+F:\Progetti\WaveFunctioColapse\WaveFunctioColapse\obj\Debug\net6.0-windows\WaveFunctioColapse.AssemblyInfo.cs
+F:\Progetti\WaveFunctioColapse\WaveFunctioColapse\obj\Debug\net6.0-windows\WaveFunctioColapse.csproj.CoreCompileInputs.cache
+F:\Progetti\WaveFunctioColapse\WaveFunctioColapse\obj\Debug\net6.0-windows\WaveFunc.1E167D8D.Up2Date
+F:\Progetti\WaveFunctioColapse\WaveFunctioColapse\obj\Debug\net6.0-windows\WaveFunctioColapse.dll
+F:\Progetti\WaveFunctioColapse\WaveFunctioColapse\obj\Debug\net6.0-windows\refint\WaveFunctioColapse.dll
+F:\Progetti\WaveFunctioColapse\WaveFunctioColapse\obj\Debug\net6.0-windows\WaveFunctioColapse.pdb
+F:\Progetti\WaveFunctioColapse\WaveFunctioColapse\obj\Debug\net6.0-windows\WaveFunctioColapse.genruntimeconfig.cache
+F:\Progetti\WaveFunctioColapse\WaveFunctioColapse\obj\Debug\net6.0-windows\ref\WaveFunctioColapse.dll

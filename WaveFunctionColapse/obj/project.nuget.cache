@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "EL5rRIDxRxg=",
+  "success": true,
+  "projectFilePath": "F:\\Progetti\\WaveFunctioColapse\\WaveFunctionColapse\\WaveFunctionCollapse.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\stefi\\.nuget\\packages\\microsoft.win32.systemevents\\9.0.5\\microsoft.win32.systemevents.9.0.5.nupkg.sha512",
+    "C:\\Users\\stefi\\.nuget\\packages\\system.drawing.common\\9.0.5\\system.drawing.common.9.0.5.nupkg.sha512",
+    "C:\\Users\\stefi\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.17763.57\\microsoft.windows.sdk.net.ref.10.0.17763.57.nupkg.sha512"
+  ],
+  "logs": []
+}
